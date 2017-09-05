@@ -18,5 +18,17 @@ public class HomeController {
                 ModelAndView("homepage", "message", "Hello World");
     }
 
+    @RequestMapping("/gotologin")
+    public ModelAndView goToLogin(){
+        return new ModelAndView("login","","");
+    }
+
+    @RequestMapping("/login")
+    public ModelAndView login(){
+
+        return new ModelAndView("profile","","");
+
+    }
+
 }
 
