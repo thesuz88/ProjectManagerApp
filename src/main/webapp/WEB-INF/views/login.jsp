@@ -13,7 +13,7 @@
 <body>
 
 <table>
-    <form action="login" method="post">
+    <form action="/login" method="post">
     <tr>
         <td>Username</td>
         <td><input type="text" name="username" class="login" placeholder="Username or Email" required></td>
@@ -26,7 +26,12 @@
         <td><input type="submit" name="submit"></td>
     </tr>
     </form>
+    <tr>
+        <td>Not a registered user?</td>
+        <td><a href = "/gotoregister">sign up here</a></td>
+    </tr>
 </table>
+
 
 
 </body>

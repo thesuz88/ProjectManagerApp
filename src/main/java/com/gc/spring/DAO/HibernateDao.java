@@ -1,11 +1,20 @@
 package com.gc.spring.DAO;
 
 import com.gc.spring.tables.UsersEntity;
+import com.gc.spring.util.HibernateUtil;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 import java.util.List;
 
 public class HibernateDao implements Dao {
 
+    private static SessionFactory sessionFactory;
+
+    public HibernateDao (){
+        sessionFactory = HibernateUtil.getSessionFactory();
+    }
 
     public List<UsersEntity> findAll() {
         return null;
@@ -19,15 +28,20 @@ public class HibernateDao implements Dao {
         return null;
     }
 
-    public boolean insertUser(UsersEntity user) {
-        return false;
+    public void insertUser(UsersEntity user) {
+        sessionFactory = HibernateUtil.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        session.save(user);
+        session.getTransaction().commit();
+
     }
 
-    public boolean updateUser(UsersEntity user) {
-        return false;
+    public void updateUser(UsersEntity user) {
+
     }
 
-    public boolean deleteUser(UsersEntity user) {
-        return false;
+    public void deleteUser(UsersEntity user) {
+
     }
 }

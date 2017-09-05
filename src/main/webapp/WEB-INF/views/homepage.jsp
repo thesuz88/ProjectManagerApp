@@ -67,7 +67,7 @@
         <h1>${message}</h1>
         <h3>Free Bootstrap Themes &amp; Templates</h3>
         <br>
-        <a href="#about" class="btn btn-dark btn-lg js-scroll-trigger">Find Out More</a>
+        <a href="/gotologin" class="btn btn-dark btn-lg js-scroll-trigger">Log In</a>
     </div>
 </header>
 

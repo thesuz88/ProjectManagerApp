@@ -12,9 +12,9 @@ public interface Dao {
 
     List<UsersEntity> findByUsername();
 
-    boolean insertUser(UsersEntity user);
+    void insertUser(UsersEntity user);
 
-    boolean updateUser(UsersEntity user);
+    void updateUser(UsersEntity user);
 
-    boolean deleteUser(UsersEntity user);
+    void deleteUser(UsersEntity user);
 }

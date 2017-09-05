@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <html>
 <head>
     <title>Register New User</title>
@@ -14,7 +15,7 @@
 
 
 <table>
-    <form action="register" method="post">
+    <form:form action="/registeruser" method="POST">
         <tr>
             <td>First Name</td>
             <td><input required class="register" name="firstname"> </td>
@@ -40,12 +41,20 @@
             <td><input required class="register" name="confirmpass"> </td>
         </tr>
         <tr>
+            <td>Phone Number</td>
+            <td><input required type="tel" class="register" name="phonenumber"></td>
+        </tr>
+        <tr>
             <td>Choose your role</td>
             <td><input type="radio" value="Project Manager" name="type">Project Manager </td>
             <td><input type="radio" value="Contractor" name="type">Contractor </td>
             <td><input type="radio" value="Employee" name="type" checked>Employee </td>
         </tr>
-    </form>
+        <tr>
+            <td><input type = "submit" name="submit"></td>
+        </tr>
+
+    </form:form>
 </table>
 </body>
 </html>
