@@ -5,7 +5,7 @@ import com.gc.spring.DAO.HibernateDao;
 
 public class DAOFactory {
 
-    public static final int HIBERNATE = 0;
+    public static final int HIBERNATE = 1;
 
 
     public static Dao getInstance (int daoType){
