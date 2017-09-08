@@ -59,7 +59,7 @@ public class HomeController {
 
         dao.insertUser(user);
 
-        return new ModelAndView("profile","username",user.getUsername());
+        return new ModelAndView("profile","display",dao.findById(username).get(0));
     }
 
 }

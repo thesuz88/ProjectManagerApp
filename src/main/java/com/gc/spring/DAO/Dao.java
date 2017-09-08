@@ -1,6 +1,7 @@
 package com.gc.spring.DAO;
 
 import com.gc.spring.tables.UsersEntity;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -8,7 +9,7 @@ public interface Dao {
 
     List<UsersEntity> findAll();
 
-    List<UsersEntity> findById();
+    List<UsersEntity> findById(@RequestParam("username")String username);
 
     List<UsersEntity> findByUsername();
 

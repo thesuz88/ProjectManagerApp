@@ -11,6 +11,6 @@
     <title>Profile</title>
 </head>
 <body>
-Welcome ${username}
+Welcome ${display.username}
 </body>
 </html>
