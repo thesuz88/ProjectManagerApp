@@ -3,7 +3,6 @@ package com.gc.spring.DAO;
 import com.gc.spring.tables.UsersEntity;
 import com.gc.spring.util.HibernateUtil;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -32,7 +31,6 @@ public class HibernateDao implements Dao {
     }
 
     public void insertUser(UsersEntity user) {
-//        sessionFactory = HibernateUtil.getSessionFactory();
         Session session = HibernateUtil.getSession();
         session.save(user);
         session.getTransaction().commit();

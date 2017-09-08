@@ -7,18 +7,17 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
 
+    private static SessionFactory factory = buildSessionFactory();
 
-
-    public static Session buildSessionFactory(){
+    public static SessionFactory buildSessionFactory(){
         Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
-        SessionFactory sessionFact = cfg.buildSessionFactory();
-        Session session = sessionFact.openSession();
+        return cfg.buildSessionFactory();
+    }
+
+    public static Session getSession(){
+        Session session = factory.openSession();
         session.beginTransaction();
         return session;
     }
 
-    public static Session getSession(){
-        Session factory = buildSessionFactory();
-        return factory;
-    }
 }

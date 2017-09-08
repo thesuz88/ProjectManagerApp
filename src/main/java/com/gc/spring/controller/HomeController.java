@@ -1,15 +1,15 @@
 package com.gc.spring.controller;
 
 import com.gc.spring.DAO.Dao;
-import com.gc.spring.DAO.HibernateDao;
 import com.gc.spring.tables.UsersEntity;
 import factory.DAOFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 /**
  * Created by Steve on 7/21/2017.
@@ -58,8 +58,9 @@ public class HomeController {
         user.setPhoneNumber(phonenumber);
 
         dao.insertUser(user);
+        List<UsersEntity> loggedInUser = (List<UsersEntity>) dao.findById(username).get(0);
 
-        return new ModelAndView("profile","display",dao.findById(username).get(0));
+        return new ModelAndView("profile","display", loggedInUser);
     }
 
 }
